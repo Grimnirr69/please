@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ok come fight</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://www.dropbox.com/scl/fi/yyurqit7buctfcesyssxm/Your-paragraph-text-1.png?rlkey=9y4n91mm0tcp3qc4nzm6w3tqe&raw=1');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 1);
+            padding: 20px;
+        }
+        h1 { font-size: 32px; margin-top: 20px; }
+        p { font-size: 18px; font-style: italic; }
+        .buttons { margin-top: 20px; }
+        .btn {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 12px 25px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+        .btn:hover { background-color: darkred; }
+        .content {
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>可以愿你一起庆祝valentines天吗?</h1>
+    <h1>may i bring you out to celebrate 情人节 together?</h1>
+    <p>Date: Feb 14 2026</p>
+    <p>Time: Anytime</p>
+    <p>Location: lao pat sat / any kopitiam / maggie</p>
+
+    <div class="buttons">
+        <button class="btn" onclick="showContent('yes1')">可以!!</button>
+        <button class="btn" onclick="showContent('yes2')">Yes I would love to!!</button>
+        <button class="btn" onclick="alert('if u press this first idk what to say uh')">ok loh</button>
+        <button class="btn" onclick="alert('i sad liao')">why no "no" button one</button>
+    </div>
+
+    <!-- Hidden Content Sections -->
+    <div id="yes1" class="content">
+        🎉 Yay! We're going on a date! Get ready for some **kopitiam vibes** and **7-11 maggie**. 🌟
+    </div>
+    <div id="yes2" class="content">
+        ❤️ Awesome! Let's celebrate **情人节** with some **good food & fun times**! See you soon! 🎶
+    </div>
+
+    <!-- Play & Stop Music Buttons -->
+    <div class="music-controls">
+        <button class="btn" style="background-color: blue;" onclick="playMusic()">🎵 Play Music</button>
+        <button class="btn" style="background-color: gray;" onclick="stopMusic()">🛑 Stop Music</button>
+    </div>
+
+    <!-- Hidden Audio Player -->
+    <audio id="bg-music" loop>
+        <source src="https://www.dropbox.com/scl/fi/qfavx8gcshr8wfvjua22f/audio_2025-02-08_05-48-42.mp3?rlkey=m36yiudj0b5qe45r0omn741q0&raw=1" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playMusic() { 
+            var audio = document.getElementById("bg-music");
+            audio.play().catch(error => console.log("Autoplay blocked, user needs to press play.")); 
+        }
+        function stopMusic() { 
+            var audio = document.getElementById("bg-music");
+            audio.pause();
+            audio.currentTime = 0; 
+        }
+
+        function showContent(contentId) {
+            document.getElementById('yes1').style.display = 'none';
+            document.getElementById('yes2').style.display = 'none';
+            document.getElementById(contentId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
