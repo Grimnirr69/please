@@ -18,11 +18,43 @@
         }
         h1 { font-size: 32px; margin-top: 20px; }
         p { font-size: 18px; font-style: italic; }
+        .buttons { margin-top: 20px; }
+        .btn {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 12px 25px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        }
+        .btn:hover { background-color: darkred; }
     </style>
 </head>
 <body>
-    <h1>cya on friday my idiot</h1>
+    <h1>cya on friday my idiot <3</h1>
     <p>Date: 14 Feb 2025</p>
     <p>Location: kopitiam</p>
+
+    <h2>did we first talk?</h2>
+    <p>if you get wrong you owe me one dollar. idw talk to you alr also.</p>
+    <div class="buttons">
+        <button class="btn" onclick="checkAnswer(true)">6th jan 2025</button>  <!-- Correct Answer -->
+        <button class="btn" onclick="checkAnswer(false, 'better think properly')">7th jan 2025</button>
+        <button class="btn" onclick="checkAnswer(false, 'seriously nigger')">5th jan 2025</button>
+        <button class="btn" onclick="checkAnswer(false, 'don't sloth eh')">6th jan 2026</button>
+    </div>
+
+    <script>
+        function checkAnswer(isCorrect, message) {
+            if (isCorrect) {
+                window.location.href = "page2.html";  // Redirect to page 2
+            } else {
+                alert(message);  // Show custom wrong answer message
+            }
+        }
+    </script>
 </body>
 </html>
