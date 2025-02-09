@@ -38,4 +38,39 @@
     <h1>可以愿你一起庆祝valentines天吗?</h1>
     <h1>may i bring you out to celebrate 情人节 together?</h1>
     <p>Date: Feb 14 2026</p>
-    <p>Time: Anytime
+    <p>Time: Anytime</p>
+    <p>Location: lao pat sat / any kopitiam / maggie</p>
+
+    <div class="buttons">
+        <button class="btn" onclick="window.location.href='page1.html'">可以!!</button> <!-- Links to page1.html -->
+        <button class="btn" onclick="window.location.href='page1.html'">Yes I would love to!!</button> <!-- Links to page1.html -->
+        <button class="btn" onclick="alert('if u press this first idk what to say uh')">ok loh</button>
+        <button class="btn" onclick="alert('i sad liao')">why no "no" button one</button>
+    </div>
+
+    <!-- Play & Stop Music Buttons -->
+    <div class="music-controls">
+        <button class="btn" style="background-color: blue;" onclick="playMusic()">🎵 Play Music</button>
+        <button class="btn" style="background-color: gray;" onclick="stopMusic()">🛑 Stop Music</button>
+    </div>
+
+    <!-- Hidden Audio Player -->
+    <audio id="bg-music" loop>
+        <source src="https://www.dropbox.com/scl/fi/qfavx8gcshr8wfvjua22f/audio_2025-02-08_05-48-42.mp3?rlkey=m36yiudj0b5qe45r0omn741q0&raw=1" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function playMusic() { 
+            var audio = document.getElementById("bg-music");
+            audio.play().catch(error => console.log("Autoplay blocked, user needs to press play.")); 
+        }
+        function stopMusic() { 
+            var audio = document.getElementById("bg-music");
+            audio.pause();
+            audio.currentTime = 0; 
+        }
+    </script>
+
+</body>
+</html>
